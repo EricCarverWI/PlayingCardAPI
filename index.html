@@ -17,26 +17,75 @@
     <h1 style="text-decoration: underline; text-decoration-color: rgb(231, 252, 112); color: rgb(250, 4, 229); font-size: 64px; text-align: center; font-weight:44px">jOkeRs wiLD!</h1>  
 
     <div id="root" class="container" style = "color: white; font-size: 16px; text-align: center; font-weight:14px" > 
-     
+
+    
+      <p>Currently using ${(localStorage.deckBatch).deck_id}</p>
+      <div>
+        <center>
+          Dealer's Cards:<input type="text" id="dealer"><br> 
+          Player's Cards: <input type="text" id="you"><br>
+          <!-- <input type=button value="HIT" onClick="HUMAN()"> -->
+          <!-- <input type=button value="STAND" onClick="COMPUTER();determineWinner();"> -->
+          <!-- <input type=button value="DEAL" onClick="GenerateNewGame()"> -->
+          <br>
+          <br>
+        </center>
+      </div>
+      <div>
+        <center>
+          <table>
+              <tr>
+                  <th>HUMAN</th>
+                  <th>COMPUTER</th>
+                  <th>Games Played</th>
+              </tr>
+              <tr>
+                  <td id="resultHUM"></td>
+                  <td id="resultCOMP"></td>
+                  <td id="COUNT"></td>
+              </tr>
+          </table>
+      </center>
+      </div>
+      <div>
+        <center>
+          <h2>Win Stats</h2>
+          <table id="stat">
+              <tr>
+                  <th>Player</th>
+                  <th>Dealer</th>
+              </tr>
+              <tr>
+                  <td id="HUMW"></td>
+                  <td id="COMPW"></td>
+              </tr>
+          </table>
+      </center>
+      </div>
+      <p style = "text-align: center; margin: 10px;">
+        <button type="button" class="btn btn-primary btn-lg" value="HIT" onClick="HUMAN()">Hit!</button>
+        <button type="button" class="btn btn-primary btn-lg" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
+        <button type="button" class="btn btn-primary btn-lg" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
+      </p>
+
       
 
     </div>
 
-    <p style = "text-align: center; margin: 10px;">
-      <button type="button" class="btn btn-primary btn-lg">Fold</button>
-      <button type="button" class="btn btn-primary btn-lg">Draw New Card</button>
-      <button type="button" class="btn btn-primary btn-lg">Draw New Hand</button>
-    </p>
+
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <!--ERIC: initial test of data to div:Root-->
-    <script src="testScriptData01.js"></script>
+    <!-- <script src="testScriptData01.js"></script> -->
 
     <!--ERIC: connect script file to the index-->
     <script src="script.js"></script>
+
+    <!--ERIC: connect script2 file to the index-->
+    <script src="script2.js"></script>
 
   </body>
 </html>
