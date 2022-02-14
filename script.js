@@ -1,57 +1,102 @@
-//<!-- ERIC: created  2/8 -->
 
-//<!-- ERIC: test edit 2/11 -->
-console.log ("1HELLO FETCH");
-const rootDIV = document.getElementById("root");
+    var activeHand = false;
+    var scoreTabulated = false;
+    const handHuman = document.getElementById("you");
+    const handComputer = document.getElementById("dealer");
 
-let deckBatch = {new : "new"};
-let deckNUM = "new";
+    const resultsHuman = document.getElementById("resultHUM");
+    const resultsComputer = document.getElementById("resultCOMP");
+    const gamesCounter = document.getElementById("COUNT");
 
-async function fetchDeckJSON(){
-    const response = await fetch ("https://deckofcardsapi.com/api/deck/new/");
-    const fetchDeckJSONdata = await response.json();
-    return fetchDeckJSONdata;
-}
+    var scoreHuman = document.getElementById("HUMW");
+    scoreHuman.innerText = 0;
+    var scoreComputer = document.getElementById("COMPW");
+    scoreComputer.innerText = 0;
 
-fetchDeckJSON().then( data =>{
-    console.log(1);
-    deckNUM = data.deck_id;
-    console.log (deckNUM);
-    console.log (2);
-    deckBatch = data;
-    console.log (deckBatch);
-    console.log (3);
-    rootDIV.innerText += "\n\n\nDeckID is now:   ";
-    rootDIV.innerText += deckNUM;
-    console.log (deckBatch);
-    console.log (deckBatch.deck_id);
-});
+    var handCounter = 0;
+    var counterHuman = 0;
+    var counterComputer = 0;
 
+    
+    function getACard(){
+        card = Math.floor(Math.random() * 13) + 1
+            if(card == 1){
+                card = 11;
+            } else if(card > 10){
+                card = 10;
+            }
+            return Number(card);
+        }
 
-// fetch ("https://deckofcardsapi.com/api/deck/new/")
-//     .then(response => response.json())
-//     .then(data => {
-//         rootDIV.innerText += "\n\n\nDeckID is now:   ";
-//         rootDIV.innerText += data.deck_id;
-//         console.log (1);
-//         console.log (data);  //GOOD
-//         console.log (2);
-//         deckBatch = data;  //
-//         console.log (deckBatch);  //good
-//         console.log (3);
-//         deckNUM = data.deck_id;
-//         console.log (deckNUM);
-//         console.log (4);
-//         console.log (`3DeckOutput: ${deckNUM}`);
-//         console.log (5);
+        function GenerateNewGame(){
+            activeHand = true;
+            scoreTabulated = false;
+            handCounter +=1;
+            document.getElementById("resultHUM").innerHTML = "";
+            document.getElementById("resultCOMP").innerHTML = "";
+            document.getElementById("COUNT").innerHTML = handCounter;
+            document.getElementById("dealer").value = 0;
+            document.getElementById("you").value = 0;
+            document.getElementById("dealer").value = Number(document.getElementById("dealer").value) + Number(getACard());
+            document.getElementById("you").value = Number(document.getElementById("you").value) + Number(getACard());
+        }
 
-//     });
+        function COMPUTER(){
+            if (activeHand===true){
+                while(document.getElementById("dealer").value < 17){
+                    let newCard = Number(getACard());
+                    if (newCard === 11 && document.getElementById("dealer").value >10){
+                        newCard = 1;
+                    }
+                    document.getElementById("dealer").value = Number(document.getElementById("dealer").value) + newCard;
+                }
+            }
+            activeHand = false;
+        }
 
-//     console.log (11);
-//     console.log (deckBatch);
-//     console.log (12);
+        function HUMAN(){
+            if (activeHand===true){
+                let newCard = Number(getACard());
+                if (newCard === 11 && document.getElementById("you").value > 10){
+                    newCard = 1;
+                }
+                document.getElementById("you").value = parseInt(document.getElementById("you").value) + newCard;
+                if(document.getElementById("you").value > 21){
+                    counterComputer += 1;
+                    document.getElementById("COMPW").innerHTML = counterComputer;
+                    document.getElementById("resultCOMP").innerHTML = "PC WIN";
+                    document.getElementById("resultHUM").innerHTML = "YOU BUSTED";
+                    activeHand = false;
+                    scoreTabulated=true;
+                }
+            }
+        }
 
-// fetch (`https://deckofcardsapi.com/api/deck/${data.deck_id}/draw/?count=2`)
-
-// console.log (deckBatch);  //3
-// console.log (deckNUM);//4
+        function determineWinner(){
+            if (activeHand===false && scoreTabulated===false){
+                var a = parseInt(document.getElementById("you").value);
+                var b = parseInt(document.getElementById("dealer").value);
+                scoreTabulated = true;
+                if(b > 21){
+                    counterHuman += 1;
+                    document.getElementById("HUMW").innerHTML = counterHuman;
+                    document.getElementById("resultHUM").innerHTML = "YOU WIN";
+                    return;
+                } else if(a==b){
+                    counterHuman += 0.5;
+                    counterComputer += 0.5;
+                    document.getElementById("HUMW").innerHTML = counterHuman;
+                    document.getElementById("COMPW").innerHTML = counterComputer;
+                    document.getElementById("resultHUM").innerHTML = "TIE";
+                    document.getElementById("resultCOMP").innerHTML = "TIE";
+                } else if(a>b){
+                    counterHuman += 1;
+                    document.getElementById("HUMW").innerHTML = counterHuman;
+                    document.getElementById("resultHUM").innerHTML = "YOU WIN";
+                } else if(b>a){
+                    counterComputer += 1;
+                    document.getElementById("COMPW").innerHTML = counterComputer;
+                    document.getElementById("resultCOMP").innerHTML = "PC WIN";
+                }
+            }
+        }
