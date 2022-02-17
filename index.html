@@ -16,14 +16,14 @@
   <body style="background-image: url('https://www.snabbare.com/go/wp-content/uploads/2020/01/Card-Games-header.jpg'); background-repeat: no-repeat; background-attachment: fixed;background-size: cover;">
     <h1 style="text-decoration: underline; text-decoration-color: rgb(231, 252, 112); color: rgb(250, 4, 229); font-size: 64px; text-align: center; font-weight:44px">jOkeRs wiLD!</h1>  
 
-    <div id="root" class="container" style = "color: white; font-size: 20px; text-align: center; font-weight:14px; background-color: gray; max-width: 590px; min-height: 530px;" > 
+    <div id="root" class="container" style = "color: white; font-size: 20px; text-align: center; font-weight:14px; background-color: gray; max-width: 590px; min-height: 600px;" > 
 
     
       <!-- <p>Currently using ${(localStorage.deckBatch).deck_id}</p> -->
       <div style= "display: inline; ">
           <br>
-          Dealer's Cards:<div ><input  type="text" id="dealer"><input  type="text" id="'dealerArr"></div><br><br> 
-          Player's Cards: <div><input type="text" id="you"><input  type="text" id="'dealerArr"></div><br>
+          Dealer's Cards:<div><input  type="text" id="dealer" size="2">&nbsp;&nbsp;<input  type="text" id="'dealerArr"></div><br><br> 
+          Player's Cards: <div><input type="text" id="you" size="2">&nbsp;&nbsp;<input  type="text" id="'yourArr"></div><br>
           <!-- <input type=button value="HIT" onClick="HUMAN()"> -->
           <!-- <input type=button value="STAND" onClick="COMPUTER();determineWinner();"> -->
           <!-- <input type=button value="DEAL" onClick="GenerateNewGame()"> -->
@@ -37,15 +37,16 @@
                   <th style="width:30%; color: rgb(9, 31, 9)">COMPUTER</th>
                   <th style="width:30%; color: purple">GAMES PLAYED</th>
               </tr>
-          <tr>
-             <td id="resultHUM2></tGAMES PLAYED                  <td id="resultCOMP"></td>
+              <tr>
+                  <td id="resultHUM"></td>                 
+                  <td id="resultCOMP"></td>
                   <td id="COUNT"></td>
               </tr>
           </table>
       </div>
       <div style= "display: inline; ">
           <h2>Win Stats</h2>
-          <ta ble id="stat">
+          <table id="stat">
               <tr>
                   <th>Player</th>
                   <th style="width:15%">Dealer</th>
@@ -56,11 +57,17 @@
               </tr>
           </table>
       </div>
-      <p style = "text-align: center; margin: 10px;">
-        <button type="button" class="btn btn-primary btn-lg" value="HIT" onClick="HUMAN()">Hit!</button>
-        <button type="button" class="btn btn-primary btn-lg" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
-        <button type="button" class="btn btn-primary btn-lg" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
-      </p>
+      <div style= "display: inline; width: 40px;">
+        <p style = "text-align: center; margin: 10px;">
+          <button type="button" class="btn btn-primary btn-lg" value="HIT" onClick="HUMAN()">Hit!</button>
+          <button type="button" class="btn btn-primary btn-lg" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
+          <button type="button" class="btn btn-primary btn-lg" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
+        </p>
+        <p style = "text-align: center; width: 500;">
+           <button id="deckButton" type="button" class="btn btn-primary btn-lg w-100" value="DECK-INFO" >Deck Info!</button>
+        </p>
+      </div>
+      
 
       
 
