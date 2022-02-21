@@ -15,26 +15,31 @@
     <title>PLAYING CARDS!</title>
   </head>
   <body style="background-image: url('https://www.snabbare.com/go/wp-content/uploads/2020/01/Card-Games-header.jpg'); background-repeat: no-repeat; background-attachment: fixed;background-size: cover;">
+    <a name="top"></a>
     <h1 style="text-decoration: underline; text-decoration-color: rgb(83, 95, 12); color: rgb(141, 44, 141); font-size: 64px; text-align: center; font-weight:44px; text-shadow: 4px 4px  black; ">jOkeRs wiLD!</h1>  
 
-    <div id="root" class="container" style = "color: white; font-size: 20px; text-align: center; font-weight:14px; background-color: rgb(70, 59, 66); max-width: 590px; min-height: 980px;"> 
+    <div id="root" class="container" style = "color: rgb(20, 3, 24); font-size: 20px; text-align: center; font-weight:14px;  background-color: rgb(90, 53, 77); max-width: 590px; min-height: 980px;"> 
+     
 
     
       <!-- <p>Currently using ${(localStorage.deckBatch).deck_id}</p> -->
-      <div style= "display: inline; ">
+      <div style= "display: inline; font-family: 'Lobster', cursive; font-size: 26px">
           <br>
-          Dealer's Cards:<div><input  type="text" style="text-align:center" id="dealer" size="2">&nbsp;&nbsp;<input  type="text" size = "30" id="'dealerArr"></div><br><br> 
-          Player's Cards: <div><input type="text" style="text-align:center" id="you" size="2">&nbsp;&nbsp;<input  type="text" size = "30" id="'yourArr"></div><br>
+          Dealer's Cards<div><input  type="text" style="text-align:center; font-family: 'Lobster', cursive;" id="dealer" size="2">&nbsp;&nbsp;<input  type="text" size = "30" id="'dealerArr"></div><br><br> 
+          Player's Cards<div><input type="text" style="text-align:center; font-family: 'Lobster', cursive;" id="you" size="2">&nbsp;&nbsp;<input  type="text" size = "30" id="'yourArr"></div><br>
           <!-- <input type=button value="HIT" onClick="HUMAN()"> -->
           <!-- <input type=button value="STAND" onClick="COMPUTER();determineWinner();"> -->
           <!-- <input type=button value="DEAL" onClick="GenerateNewGame()"> -->
           <!-- <img src="https://www.arkadian.vg/wp-content/uploads/2014/05/Harley-Quinn-original-790x1160.png" width="110" height="130"> -->
-          <img src="https://th.bing.com/th/id/OIP.Tk4aLnfFNa9ncO1D2rkhBAHaFj?w=192&h=180&c=7&r=0&o=5&pid=1.7" width="310" height="230">
+          <img src="https://th.bing.com/th/id/OIP.Tk4aLnfFNa9ncO1D2rkhBAHaFj?w=192&h=180&c=7&r=0&o=5&pid=1.7" width="310" height="230" id="borderimg"></img>
           <br>
-          <br>
+        
+          
       </div>
+  
+      <a href="#top">Back to top of page</a>
       <div style= "display: inline;">
-        <h style="width:25%; color:rgb(241, 255, 241); ">Current Match Info</h><br><br>
+        <h3 style="width: 100%; color:rgb(241, 255, 241);font-family: 'Lobster', cursive; font-size: 42px; font-weight: bold">Current Match Info</h3>
           <table style="width: 100%">
               <tr>
                   <th style="border: 5px solid black !important; width:30%; color: rgb(0, 0, 8)">HUMAN</th>
@@ -42,6 +47,7 @@
                   <th style="border: 5px solid black !important; width:30%; color:rgb(1, 19, 1)">HAND NUMBER</th>
                   
               </tr>
+             
               <tr>
                   <td id="resultHUM"></td>                 
                   <td id="resultCOMP"></td>
@@ -53,7 +59,7 @@
       <div style= "display: inline; border: 10px black; ">
         
         <br><br>
-        <h style="width:25%; color:rgb(241, 255, 241); ">Win Stats</h><br><br>
+        <h3 style="width:100%; color:rgb(241, 255, 241);font-family: 'Lobster', cursive; font-size: 42px; font-weight: bold">Win Stats</h3>
           <table id="stat">
            
               <tr>
