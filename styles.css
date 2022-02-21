@@ -1,17 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 
 h1 {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 button {
-    background: url('https://th.bing.com/th/id/R.56aa393d843e9c99dcd50369ecbe2858?rik=rf0EFKTAH1QUVg&riu=http%3a%2f%2fwww.freevector.com%2fsite_media%2fpreview_images%2fFreeVector-Card-Games-Background.jpg&ehk=4HBogQkDidYo0xMwWpWLVO4mhKmAeZz9jGOn7fp5V0Y%3d&risl=&pid=ImgRaw&r=0') no-repeat !important;
+    background: url('https://thewritersmultiverse.files.wordpress.com/2014/07/the-killing-joke-6.png') !important;
     /* background-color: rgb(69, 18, 128) !important; */
     display: inline-block;
-    padding: 12px 18px !important;
+    padding: 10px 32px !important;
     cursor: pointer !important;
     border-radius: 15px !important;
     font-size: 36px !important;
     font-weight: bold !important;
 
+}
+
+#borderimg {
+    border: 40px solid transparent;
+    padding: 0px;
+    border-image: url(https://th.bing.com/th/id/R.7eb8e50a73b2957adaff7a3f96494655?rik=tSHqGu%2fSIgf%2bAQ&riu=http%3a%2f%2fcoinsandstamps.com%2fOther_Collectibles%2fPaper_Items%2fIMG-Playing_Cards-1a%2fCA091-1.jpg&ehk=JKqrCzMpyfr%2f1j1AUon2xV5xtxjQ2voFKlqGLbDHNAA%3d&risl=&pid=ImgRaw&r=0) 600 round;
 }
