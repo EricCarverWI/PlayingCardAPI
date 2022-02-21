@@ -33,13 +33,13 @@
           <br>
           <br>
       </div>
-      <div style= "display: inline; ">
+      <div style= "display: inline;">
         <h style="width:25%; color:rgb(241, 255, 241); ">Current Match Info</h><br><br>
           <table style="width: 100%">
               <tr>
-                  <th style="width:30%; color: rgb(0, 0, 8)">HUMAN</th>
-                  <th style="width:30%; color: rgb(9, 31, 9)">COMPUTER</th>
-                  <th style="width:30%; color:rgb(9, 49, 9)">HAND NUMBER</th>
+                  <th style="border: 5px solid black !important; width:30%; color: rgb(0, 0, 8)">HUMAN</th>
+                  <th style="border: 5px solid black !important; width:30%; color: rgb(9, 31, 9)">COMPUTER</th>
+                  <th style="border: 5px solid black !important; width:30%; color:rgb(1, 19, 1)">HAND NUMBER</th>
                   
               </tr>
               <tr>
@@ -57,9 +57,9 @@
           <table id="stat">
            
               <tr>
-                  <th style="width:15%; color:rgb()">Player</th>
-                  <th style="width:15%;">Dealer</th>
-                  <th style="width:15%;">Last Hand Won</th>
+                  <th style="border: 5px solid black !important; width:15%; color:rgb()">Player</th>
+                  <th style="border: 5px solid black !important; width:15%;">Dealer</th>
+                  <th style="border: 5px solid black !important; width:15%;">Last Hand Won</th>
               </tr>
               <tr>
                   <td id="HUMW"></td>
@@ -72,9 +72,9 @@
       <hr style= "height:10px; color:rgba(1, 1, 15, 0.986)">
       <div style= "display: inline; width: 40px;">
         <p style = "text-align: center; margin: 10px;">
-          <button type="button" class="btn btn-primary btn-lg"  value="HIT" onClick="HUMAN()">Hit!</button>
-          <button type="button" class="btn btn-primary btn-lg" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
-          <button type="button" class="btn btn-primary btn-lg" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
+          <button type="button" style="color: rgb(241, 234, 234)" class="btn btn-primary btn-lg"  value="HIT" onClick="HUMAN()">Hit!</button>
+          <button type="button" style="color: rgb(243, 237, 237)" class="btn btn-primary btn-lg" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
+          <button type="button" style="color: rgb(245, 240, 240)" class="btn btn-primary btn-lg" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
           
         </p>
         

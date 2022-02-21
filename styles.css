@@ -5,6 +5,13 @@ h1 {
 }
 
 button {
-    background-color: rgb(141, 44, 141) !important;
+    background: url('https://th.bing.com/th/id/R.56aa393d843e9c99dcd50369ecbe2858?rik=rf0EFKTAH1QUVg&riu=http%3a%2f%2fwww.freevector.com%2fsite_media%2fpreview_images%2fFreeVector-Card-Games-Background.jpg&ehk=4HBogQkDidYo0xMwWpWLVO4mhKmAeZz9jGOn7fp5V0Y%3d&risl=&pid=ImgRaw&r=0') no-repeat !important;
+    /* background-color: rgb(69, 18, 128) !important; */
+    display: inline-block;
+    padding: 12px 18px !important;
+    cursor: pointer !important;
+    border-radius: 15px !important;
+    font-size: 36px !important;
+    font-weight: bold !important;
 
 }
