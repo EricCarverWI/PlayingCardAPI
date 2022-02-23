@@ -4,6 +4,7 @@
 //Flags for access
     var flagLiveDeck = false;    //tracks whether a deck has been generated
     var activeHand = false;      //tracks whether hand has been dealt and player is active
+    var handCompleted = false       //tracks whether current hand is complete
     var scoreTabulated = false;  //tracks whether a closed hand had score tracked
     var flagReportWindowClosed = true;  //tracks current status of report window (open or closed)
 //Score tracker
@@ -43,6 +44,8 @@
                 console.log ("this is the newDeck:", newDeck);
                 buttonDeck.innerText = (`SUCCESS: deck#: ${gameDecksHistory[0].deck_id}, cards left: ${gameDecksHistory[0].cards.length} ***`);
                 flagLiveDeck = true;  //Ready to play
+                activeHand = false;
+                handCompleted = false;
                 // document.getElementById("buttonDeal").setAttribute("class", "btn btn-primary btn");
             }catch(err){
                 console.log (err);
@@ -50,9 +53,10 @@
     };
 
     function GenerateNewGame(){
-        if (flagLiveDeck === true && gameDecksHistory[0].cards.length > 25 && activeHand === false){       //only allows a deal IF API works
+        if (flagLiveDeck === true && gameDecksHistory[0].cards.length > 25){       //only allows a deal IF API works
             activeHand = true;
             scoreTabulated = false;
+            handCompleted = false;
             handCounter +=1;
             resultsHuman.innerHTML = "";
             resultsComputer.innerHTML = "";
@@ -92,7 +96,7 @@
     }
 
     function HUMAN(){
-        if (activeHand===true){
+        if (activeHand===true && flagLiveDeck===true && handCompleted === false){
             let humanNewCard = returnNewCardFromDeck();
             console.log (`This is after the NEW humanNewCard: ${humanNewCard.code}`);
     
@@ -117,7 +121,7 @@
     }
 
     function COMPUTER(){
-        if (activeHand===true){
+        if (activeHand===true && flagLiveDeck===true){
             while(handComputer.value < 17){
                 let computerNewCard = returnNewCardFromDeck();
                 console.log (`This is after the NEW computer card: ${computerNewCard.code}`);
@@ -130,12 +134,13 @@
                 handComputer.value = Number(handComputer.value) + newCardValue; 
                 handComputerCards.value += (` [${returnNewCardInitial(computerNewCard)}${returnNewCardSuit(computerNewCard)}]`);
             }
-        }
-        activeHand = false;
+            activeHand = false;
+            handCompleted = true;
+        }        
     }
 
     function determineWinner(){
-        if (activeHand===false && scoreTabulated===false){
+        if (activeHand===false && scoreTabulated===false && flagLiveDeck===true && handCompleted === true){
             let a = Number(handHuman.value);
             let b = Number(handComputer.value);
             scoreTabulated = true;
