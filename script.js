@@ -50,7 +50,7 @@
     };
 
     function GenerateNewGame(){
-        if (flagLiveDeck === true && gameDecksHistory[0].cards.length > 25 && activeHand = false){       //only allows a deal IF API works
+        if (flagLiveDeck === true && gameDecksHistory[0].cards.length > 25 && activeHand === false){       //only allows a deal IF API works
             activeHand = true;
             scoreTabulated = false;
             handCounter +=1;
@@ -188,7 +188,6 @@
             case "4": return 4;
             case "3": return 3;
             case "2": return 2;
-            case "1": return 1;
             default: return -1;
         }
     }
@@ -208,7 +207,6 @@
             case "4": return "4";
             case "3": return "3";
             case "2": return "2";
-            case "1": return "1";
             default: return -1;
         }
     }
