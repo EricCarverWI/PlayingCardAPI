@@ -59,14 +59,14 @@
       </div>
       <div style= "display: inline; width: 40px;">
         <p style = "text-align: center; margin: 10px;">
-          <button type="button" class="btn btn-primary btn-lg" value="HIT" onClick="HUMAN()">Hit!</button>
-          <button type="button" class="btn btn-primary btn-lg" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
-          <button type="button" class="btn btn-primary btn-lg" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
+          <button id="buttonHit" type="button" class="btn btn-primary btn" value="HIT" onClick="HUMAN()">Hit!</button>
+          <button id="buttonStand" type="button" class="btn btn-primary btn" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
+          <button id="buttonDeal" type="button" class="btn btn-primary btn" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
         </p>
         <p style = "text-align: center; width: 500;">
 <!-- ERIC CHANGE 2/17 -->
            <!--<button id="deckButton" type="button" class="btn btn-primary btn-lg w-100" value="DECK-INFO" >Deck Info!</button>-->
-           <button id="deckButton" type="button" class="btn btn-primary btn-lg w-100" value="DECK-INFO" onClick="generateNewDeck()">Deck Info!</button>
+           <button id="deckButton" type="button" class="btn btn-primary btn w-100" value="DECK-INFO" onClick="generateNewDeck()">Click here to request API Card Deck!</button>
            <hr>
            <button id="reportButton" type="button" class="btn btn-primary btn-lg w-100" value="report-button" onClick="generateReport()">click to expand report info!</button>
            <div id="reportDiv">
