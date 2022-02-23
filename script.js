@@ -14,7 +14,7 @@
     const handHuman = document.getElementById("you");
     const handHumanCards = document.getElementById("'yourArr");
     const handComputer = document.getElementById("dealer");
-    const handComputerCards = document.getElementById("'dealerArr")
+    const handComputerCards = document.getElementById("'dealerArr");
 //DOM elements for Results / Info 
     const resultsHuman = document.getElementById("resultHUM");
     const resultsComputer = document.getElementById("resultCOMP");
@@ -50,7 +50,7 @@
     };
 
     function GenerateNewGame(){
-        if (flagLiveDeck === true && gameDecksHistory[0].cards.length > 25){       //only allows a deal IF API works
+        if (flagLiveDeck === true && gameDecksHistory[0].cards.length > 25 && activeHand = false){       //only allows a deal IF API works
             activeHand = true;
             scoreTabulated = false;
             handCounter +=1;
