@@ -24,8 +24,8 @@
     
       <!-- <p>Currently using ${(localStorage.deckBatch).deck_id}</p> -->
       <div style= "display: inline; font-family: 'Lobster', cursive; font-size: 26px">
-          <br>
-          Dealer's Cards<div><input  type="text" style="text-align:center; font-family: 'Lobster', cursive;" id="dealer" size="2">&nbsp;&nbsp;<input  type="text" size = "30" id="'dealerArr"></div><br><br> 
+          
+          Dealer's Cards<div><input  type="text" style="text-align:center; font-family: 'Lobster', cursive;" id="dealer" size="2">&nbsp;&nbsp;<input  type="text" size = "30" id="'dealerArr"></div><br>
           Player's Cards<div><input type="text" style="text-align:center; font-family: 'Lobster', cursive;" id="you" size="2">&nbsp;&nbsp;<input  type="text" size = "30" id="'yourArr"></div><br>
           <!-- <input type=button value="HIT" onClick="HUMAN()"> -->
           <!-- <input type=button value="STAND" onClick="COMPUTER();determineWinner();"> -->
@@ -39,7 +39,7 @@
   
       <a href="#top">Back to top of page</a>
       <div style= "display: inline;">
-        <h3 style="width: 100%; color:rgb(241, 255, 241);font-family: 'Lobster', cursive; font-size: 42px; font-weight: bold">Current Match Info</h3>
+        <h3 style="width: 100%; color:rgb(241, 255, 241);font-family: 'Lobster', cursive; font-size: 38px; font-weight: bold">Current Match Info</h3>
           <table style="width: 100%">
               <tr>
                   <th style="border: 5px solid black !important; width:30%; color: rgb(0, 0, 8)">HUMAN</th>
@@ -59,7 +59,7 @@
       <div style= "display: inline; border: 10px black; ">
         
         <br><br>
-        <h3 style="width:100%; color:rgb(241, 255, 241);font-family: 'Lobster', cursive; font-size: 42px; font-weight: bold">Win Stats</h3>
+        <h3 style="width:100%; color:rgb(241, 255, 241);font-family: 'Lobster', cursive; font-size: 38px; font-weight: bold">Win Stats</h3>
           <table id="stat">
            
               <tr>
@@ -78,19 +78,33 @@
       <hr style= "height:10px; color:rgba(1, 1, 15, 0.986)">
       <div style= "display: inline; width: 40px;">
         <p style = "text-align: center; margin: 10px;">
-          <button type="button" style="color: rgb(241, 234, 234)" class="btn btn-primary btn-lg"  value="HIT" onClick="HUMAN()">Hit!</button>
-          <button type="button" style="color: rgb(243, 237, 237)" class="btn btn-primary btn-lg" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
-          <button type="button" style="color: rgb(245, 240, 240)" class="btn btn-primary btn-lg" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
+          <button style= "text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" type="button" style="color: rgb(241, 234, 234)" class="btn btn-primary btn-lg"  value="HIT" onClick="HUMAN()">Hit!</button>
+          <button style= "text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" type="button" style="color: rgb(243, 237, 237)" class="btn btn-primary btn-lg" value="STAND" onClick="COMPUTER();determineWinner();">Stand! </button>
+          <button style= "text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" type="button" style="color: rgb(245, 240, 240)" class="btn btn-primary btn-lg" value="DEAL" onClick="GenerateNewGame()">Deal!</button>
           
         </p>
         
-        <p style = "text-align: center; width: 500;">
+        <!-- <p style = "text-align: center; width: 500; ">
            <button id="deckButton" type="button" class="btn btn-primary btn-lg w-100" value="DECK-INFO" >Deck Info!</button>
+           <button style= "text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" id="deckButton" type="button" class="btn btn-primary btn-lg w-100" value="DECK-INFO" onClick="generateNewDeck()">Deck Info!</button>
+           
         </p>
         <p style = "text-align: center; width: 500;">
-          <button id="reportButton" type="button" class="btn btn-primary btn-lg w-100" value="reportInfo" onClick="generateHistory()">click to expand report menu!</button>
-       </p>
-        <div id= "reportDIV"></div>
+          <button  id="reportButton" type="button" class="btn btn-primary btn-lg w-100" value="reportInfo" onClick="generateHistory()">click to expand report menu!</button>
+          <button style= "text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" id="reportButton" type="button" class="btn btn-primary btn-lg w-100" value="report-button" onClick="generateReport()">click to expand report info!</button>
+          <div id= "reportDIV"></div>
+       </p> -->
+       <p style = "text-align: center; width: 500;">
+        <!-- ERIC CHANGE 2/17 -->
+                   <!--<button id="deckButton" type="button" class="btn btn-primary btn-lg w-100" value="DECK-INFO" >Deck Info!</button>-->
+                   <button style= "text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" id="deckButton" type="button" class="btn btn-primary btn-lg w-100" value="DECK-INFO" onClick="generateNewDeck()">Deck Info!</button>
+                   <hr>
+                   <button style= "text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" id="reportButton" type="button" class="btn btn-primary btn-lg w-100" value="report-button" onClick="generateReport()">click to expand report info!</button>
+                   <div id="reportDiv">
+        
+                   </div>
+                </p>
+        
       </div>
 
     </div>
