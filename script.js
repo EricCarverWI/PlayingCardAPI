@@ -31,6 +31,8 @@
     var scoreComputer = document.getElementById("COMPW");
         scoreComputer.innerText = 0;
     var deckReminder = false;
+    var lastWin = document.getElementById('LASTWIN');
+        lastWin.innerText = "";
 
 //Generate an API deck and saves WHOLE DECK to Array
     const generateNewDeck = async () => {
@@ -81,6 +83,7 @@
                 activeHand = false;
                 resultsHuman.innerHTML = "YOU WIN!";
                 resultsComputer.innerHTML = "BLACKJACK!!";
+                lastWin.innerHTML = "HUMAN";
                 scoreTabulated = true;
                 tabulateHandHistory();
             }
@@ -113,6 +116,7 @@
                 scoreComputer.innerHTML = counterComputer;
                 resultsComputer.innerHTML = "PC WIN";
                 resultsHuman.innerHTML = "YOU BUSTED";
+                lastWin.innerHTML = "COMPUTER";
                 activeHand = false;
                 scoreTabulated=true;
                 tabulateHandHistory();
@@ -148,6 +152,7 @@
                 counterHuman += 1;
                 scoreHuman.innerHTML = counterHuman;
                 resultsHuman.innerHTML = "YOU WIN";
+                lastWin.innerHTML = "HUMAN";
                 tabulateHandHistory();
                 return;
             } else if(a==b){
@@ -157,16 +162,19 @@
                 scoreComputer.innerHTML = counterComputer;
                 resultsHuman.innerHTML = "TIE";
                 resultsComputer.innerHTML = "TIE";
+                lastWin.innerHTML = "TIE";
                 tabulateHandHistory();
             } else if(a>b){
                 counterHuman += 1;
                 scoreHuman.innerHTML = counterHuman;
                 resultsHuman.innerHTML = "YOU WIN";
+                lastWin.innerHTML = "HUMAN";
                 tabulateHandHistory();
             } else if(b>a){
                 counterComputer += 1;
                 scoreComputer.innerHTML = counterComputer;
                 resultsComputer.innerHTML = "PC WIN";
+                lastWin.innerHTML = "COMPUTER";
                 tabulateHandHistory();
             }
         }
